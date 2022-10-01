@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useLocation } from "react-router-dom";
 
 const NavbarComponent = () => {
+  const location = useLocation();
+
   const divStyle = {
     fontFamily: "Raleway, sans-serif",
     fontSize: "36px",
@@ -13,7 +16,8 @@ const NavbarComponent = () => {
   };
 
   const refreshPage = () => {
-    window.location.reload(false);
+    console.log(location);
+    if (location.pathname === "/") window.location.reload(false);
   };
   return (
     <nav className="navbar  bg-primary bg-gradient ">
