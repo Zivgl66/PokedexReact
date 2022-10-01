@@ -4,14 +4,16 @@ import { Row, Col, Container } from "react-bootstrap";
 const TableComponent = (props) => {
   const divStyle = {
     backgroundColor: "white",
-    borderRadius: "50px",
+    borderRadius: "25px",
+    padding: "10px",
+    marginTop: "10px",
   };
 
   return (
     <Container fluid style={divStyle}>
       <Row>
         {props.pokemonArr.map((pokemon, k) => (
-          <Col key={k} xs={12} md={6} lg={4}>
+          <Col key={k} xs={12} md={6} lg={3}>
             <MiniCardComponent pokemon={pokemon} />
           </Col>
         ))}

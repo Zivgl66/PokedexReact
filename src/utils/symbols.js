@@ -9,7 +9,7 @@ const typeSymbolsArray = [
     type: "Dark",
     url:
       "https://upload.wikimedia.org/wikipedia/commons/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg",
-    color: "#323A4ABBF",
+    color: "#323A4ABB",
   },
   {
     type: "Dragon",

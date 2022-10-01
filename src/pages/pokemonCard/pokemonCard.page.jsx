@@ -5,18 +5,22 @@ import CardComponent from "../../components/card/card.component";
 import "../loader.css";
 
 const PokemonCardPage = () => {
-  //declarations
   //getting the id of the pokemon from the url
   let { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [pokeData, setPokeData] = useState({});
   const [evolutionsArrayData, setEvolutionsArrayData] = useState([]);
   const [allDone, setAllDone] = useState(false);
+  const [pokemonDesc, setPokemonDesc] = useState("");
 
+  //do the axios request for the evolutions and get their names , push it to an array
   const pushArrayEvolutions = (url) => {
     axios
       .get(url)
       .then((res) => {
+        setPokemonDesc(
+          res.data.flavor_text_entries[1].flavor_text.replace("\f", "")
+        );
         if (res.data.evolution_chain.url) {
           axios
             .get(res.data.evolution_chain.url)
@@ -46,11 +50,11 @@ const PokemonCardPage = () => {
       });
   };
 
+  //get the information about the evolutions and push them into an array
   const getEvolutions = async (evoArr) => {
     const tmpValue = [];
     const promises = new Promise((res, rej) => {
       evoArr.forEach(async (name, index, array) => {
-        // console.log("get evolutions called ", name);
         try {
           const res = await axios.get(
             `https://pokeapi.co/api/v2/pokemon/${name}`
@@ -61,7 +65,6 @@ const PokemonCardPage = () => {
             id: res.data.id,
           };
           tmpValue.push(pokemon);
-          // setEvolutionsArrayData(tmpValue);
         } catch (err) {
           console.log("error from pokemon evolution fetch: ", err);
         }
@@ -76,6 +79,7 @@ const PokemonCardPage = () => {
     });
   };
 
+  //useeffect to get the pokemon's data
   useEffect(() => {
     const getData = async () => {
       try {
@@ -92,12 +96,14 @@ const PokemonCardPage = () => {
     getData();
   }, [id]);
 
+  //useeffect to check theres pokemon data and send another url for an axios request if there is
   useEffect(() => {
     if (Object.keys(pokeData).length !== 0) {
       pushArrayEvolutions(pokeData.species.url);
     }
   }, [pokeData]);
 
+  //useeffect to check if all the loading is done
   useEffect(() => {
     if (allDone) {
       setIsLoading(false);
@@ -113,6 +119,7 @@ const PokemonCardPage = () => {
   ) : (
     <>
       <CardComponent
+        key={pokeData.name + "xx"}
         name={pokeData.name}
         type={pokeData.types}
         ability={pokeData.abilities}
@@ -120,6 +127,7 @@ const PokemonCardPage = () => {
         image={pokeData.sprites.other["official-artwork"].front_default}
         height={pokeData.height * 10}
         weight={pokeData.weight / 10}
+        description={pokemonDesc}
         evolutions={evolutionsArrayData}
       />
     </>

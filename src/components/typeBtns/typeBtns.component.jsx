@@ -4,7 +4,7 @@ const TypeBtnsComponent = (props) => {
   return (
     <Link
       to="#"
-      className="btn m-1"
+      className="btn p-1 m-1"
       style={{ backgroundColor: props.type.color }}
     >
       <img
@@ -13,7 +13,7 @@ const TypeBtnsComponent = (props) => {
         className=" img-responsive img-rounded m-1"
         width="25px"
       />
-      {props.type.type}
+      <span className="p-1">{props.type.type}</span>
     </Link>
   );
 };

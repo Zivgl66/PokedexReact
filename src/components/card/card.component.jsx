@@ -1,9 +1,9 @@
-import { useEffect, useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import "./card.component.css";
+import { useEffect, useState } from "react";
 import { capitalize, getTypes } from "../../utils/functions";
 import TypeBtnsComponent from "../typeBtns/typeBtns.component";
 import EvoMiniCardComponent from "../evoMiniCard/evoMiniCard.component";
-import { useNavigate } from "react-router-dom";
+import { Row, Col, Container } from "react-bootstrap";
 
 const CardComponent = ({
   name,
@@ -14,65 +14,117 @@ const CardComponent = ({
   ability,
   type,
   evolutions,
+  description,
 }) => {
-  // declaring the types array , evolutions array 
+  // declaring the types array , evolutions array
   const [typesArray, setTypesArray] = useState([]);
   const [evosArray, setEvosArray] = useState([]);
-  const navigate = useNavigate();
+
+  const divStyle = {
+    backgroundColor: "#e0dada30",
+    borderRadius: "25px",
+    padding: "10px 20px",
+    margin: "10px 10px 10px 10px",
+    width: "auto",
+  };
 
   useEffect(() => {
     setTypesArray(getTypes(type));
     setEvosArray(evolutions);
   }, [type]);
 
-  const handleClick = () => {
-    navigate("/");
-  };
-  console.log(evolutions);
-
   return (
     <>
-      <div className="card text-center m-auto w-50">
-        <div className="card-header">
-          <h3>{capitalize(name)}</h3>
+      <section className="section about-section gray-bg" id="about">
+        <div className="container">
+          <div className="row align-items-center flex-row-reverse">
+            <div className="col-lg-6 col-md-10 col-sm-12">
+              <div className="about-text">
+                <h3 className="dark-color">{capitalize(name)}</h3>
+                <h6 className="theme-color lead">
+                  <mark> Index: #{index}</mark>
+                </h6>
+                <p>{description}</p>
+                <div className="row about-list">
+                  <div className="col-md-6">
+                    <div className="media">
+                      <label>Height:</label>
+                      <p>{height}cm</p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="media">
+                      <label>Weight:</label>
+                      <p>{weight}kg</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="row about-list">
+                  <div className="col-md-8">
+                    <div className="media">
+                      <label>Abilities:</label>
+                      <p>
+                        {ability.map((ability, index) => {
+                          return (
+                            <span key={`uniqKey_${index}`}>
+                              {" "}
+                              {(index ? ", " : "") + ability.ability.name}
+                            </span>
+                          );
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="row about-list">
+                  <div className="col-md">
+                    <div className="media mt-1">
+                      <label>Type:</label>
+                      {typesArray.map((item, idx) => {
+                        return (
+                          <TypeBtnsComponent key={"btnK" + idx} type={item} />
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-10 col-sm-12">
+              <div className="about-avatar">
+                <img
+                  src={image}
+                  title="pokemon's picture"
+                  alt="pokemon's picture"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="d-flex">
+            <Container fluid className="mx-auto" style={divStyle}>
+              <Row className="d-flex fatherDiv justify-content-center">
+                {evosArray.map((obj, idx) => {
+                  if (evosArray.length !== 1)
+                    return (
+                      <>
+                        <Col
+                          key={idx}
+                          xs={6}
+                          sm={5}
+                          md={4}
+                          lg={3}
+                          className="text-center childDiv d-flex align-items-center"
+                        >
+                          <EvoMiniCardComponent evo={obj} key={idx} />
+                        </Col>
+                      </>
+                    );
+                })}
+              </Row>
+            </Container>
+          </div>
         </div>
-
-        <Link to="#" className="linkButton">
-          <img
-            src={image}
-            className="card-img-top mx-auto w-50 h-50"
-            alt="..."
-          ></img>
-        </Link>
-        <div className="card-body">
-          <h5 className="card-title">Index: #{index}</h5>
-          <h6 className="text-muted">Height: {height}cm</h6>
-          <h6 className="text-muted">Weight: {weight}kg</h6>
-          <h6 className="text-muted">
-            <span> Abilities: </span>
-            {ability.map((ability, index) => {
-              return (
-                <span key={`uniqKey_${index}`}>
-                  {" "}
-                  {(index ? ", " : "") + ability.ability.name}
-                </span>
-              );
-            })}
-          </h6>
-          {typesArray.map((item, idx) => {
-            return <TypeBtnsComponent key={"btnK" + idx} type={item} />;
-          })}
-        </div>
-        <div className="card-footer text-muted d-flex flex-row bd-highlight justify-content-center">
-          {evosArray.map((obj, idx) => {
-            if (obj.name !== name)
-              return <EvoMiniCardComponent key={"evoK" + idx} evo={obj} />;
-          })}
-        </div>
-        <div>
-          <button onClick={handleClick}>Search</button>
-        </div>
-      </div>
+      </section>
     </>
   );
 };

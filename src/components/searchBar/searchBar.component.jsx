@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
-
+import { useState } from "react";
 // fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +19,7 @@ const SearchbarComponent = (props) => {
   };
 
   return (
-    <Fragment>
+    <>
       <div className="container-fluid mt-2 mb-2">
         <form
           className="d-flex justify-content-center"
@@ -40,8 +39,9 @@ const SearchbarComponent = (props) => {
           </button>
         </form>
       </div>
-    </Fragment>
+    </>
   );
 };
 
 export default SearchbarComponent;
+

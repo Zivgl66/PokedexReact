@@ -43,8 +43,8 @@ const sendReqAllPokemon = () => {
 };
 
 //check if the digit exists in the number
-const ifInNumber = (digit, num) => {
-  return num.toString().indexOf(digit) > -1;
+const ifInNumber = (inputNum, indexNum) => {
+  return indexNum.includes(inputNum);
 };
 
 //get the id of a pokemon from the url
@@ -57,7 +57,7 @@ function checkImage(url) {
   let http = new XMLHttpRequest();
   http.open("HEAD", url, false);
   http.send();
-  if (http.status != 404) return true;
+  if (http.status !== 404) return true;
   else return false;
 }
 
