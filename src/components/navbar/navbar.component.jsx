@@ -12,10 +12,17 @@ const NavbarComponent = () => {
     textTransform: "uppercase",
   };
 
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
   return (
     <nav className="navbar  bg-primary bg-gradient ">
       <div className="container-fluid">
-        <NavLink className="navbar-brand p-1 text-white" to="/">
+        <NavLink
+          className="navbar-brand p-1 text-white"
+          to="/"
+          onClick={refreshPage}
+        >
           <img
             src={logo}
             alt="pokeball logo"
@@ -28,7 +35,7 @@ const NavbarComponent = () => {
         </NavLink>
         <span>©Zivgl66</span>
       </div>
-    </nav> 
+    </nav>
   );
 };
 

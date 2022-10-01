@@ -31,6 +31,7 @@ const HomePage = () => {
   let pokeAPIURL = "https://pokeapi.co/api/v2/pokemon/";
 
   useEffect(() => {
+    setPokemonDataArray([]);
     axios
       .get(`${pokeAPIURL}?limit=1154`)
       .then((res) => setPokemonDataArray(res.data.results));
@@ -79,10 +80,14 @@ const HomePage = () => {
             slicedArr = array.slice(0, maxShow);
             setSlicedArray(slicedArr);
             setPokemonArr2(slicedArr);
-            setIsLoading(false);
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 2000);
           } else {
             setPokemonArr2(array);
-            setIsLoading(false);
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 1500);
           }
         }
         //end loading screen
@@ -110,10 +115,8 @@ const HomePage = () => {
   const handleClickShowMore = () => {
     setMaxShow((maxShow += 12));
     if (!showMore) {
-      setIsLoading(true);
       slicedArr = filteredArray.slice(0, maxShow);
       setPokemonArr2(slicedArr);
-      setIsLoading(false);
       if (slicedArr.length >= filteredArray.length) {
         setShowMore(true);
       }
