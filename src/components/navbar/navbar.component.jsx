@@ -16,7 +16,6 @@ const NavbarComponent = () => {
   };
 
   const refreshPage = () => {
-    console.log(location);
     if (location.pathname === "/") window.location.reload(false);
   };
   return (
