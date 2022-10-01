@@ -28,7 +28,7 @@ const NavbarComponent = () => {
         </NavLink>
         <span>©Zivgl66</span>
       </div>
-    </nav>
+    </nav> 
   );
 };
 
