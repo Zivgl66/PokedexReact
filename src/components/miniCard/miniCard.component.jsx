@@ -5,7 +5,6 @@ import pofilePokeball from "../../assets/profilePokeball.png";
 
 const MiniCardComponent = (props) => {
   const navigate = useNavigate();
-
   let pokemonID = getIDFromUrl(props.pokemon.url);
   //get the src for the pokemon img using his ID
   let imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`;
@@ -25,7 +24,7 @@ const MiniCardComponent = (props) => {
         <a href="#" onClick={handleClick} className="card  mt-2">
           <div className="image-hover-zoom">
             <img
-            //the function for checking each image, took alot of time from the rendering
+              //the function for checking each image, took alot of time from the rendering
               // src={
               //   checkImage(
               //     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
@@ -35,7 +34,7 @@ const MiniCardComponent = (props) => {
               // }
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`}
               className="card__image"
-              alt=""
+              alt="pokemon image"
             />
           </div>
           <div className="card__overlay">

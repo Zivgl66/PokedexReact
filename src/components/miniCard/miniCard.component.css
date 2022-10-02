@@ -114,7 +114,7 @@ body {
   font-size: 1.1em;
   margin: 0 0 0;
   color: #0000;
-  text-shadow: 0 calc(-1 * var(--_t, 0em)) #000,
+  text-shadow: 0 calc(-1.1 * var(--_t, 0em)) #000,
     0 calc(var(--h) - var(--_t, 0em)) #164663;
   overflow: hidden;
   transition: 0.3s;
@@ -147,3 +147,4 @@ body {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SearchbarComponent from "../../components/searchBar/searchBar.component";
 import TableComponent from "../../components/table/table.component";
 // axios
@@ -10,7 +10,6 @@ import searchSchema from "../../validation/search.validation";
 import { toast } from "react-toastify";
 //loader for page
 import "../loader.css";
-
 //functions
 import { onlyNumbers, ifInNumber } from "../../utils/functions";
 
@@ -24,8 +23,9 @@ const HomePage = () => {
   const [filteredArray, setFilteredArray] = useState([]);
   const [slicedArray, setSlicedArray] = useState([]);
   let [maxShow, setMaxShow] = useState();
-  let array = [];
   const [pokemonArr2, setPokemonArr2] = useState([]);
+
+  let array = [];
   let obj = {};
   let slicedArr = [];
   let pokeAPIURL = "https://pokeapi.co/api/v2/pokemon/";
@@ -33,7 +33,7 @@ const HomePage = () => {
   useEffect(() => {
     setPokemonDataArray([]);
     axios
-      .get(`${pokeAPIURL}?limit=1154`)
+      .get(`${pokeAPIURL}?limit=905`)
       .then((res) => setPokemonDataArray(res.data.results));
     setPokemonArr2([]);
   }, []);
@@ -130,7 +130,10 @@ const HomePage = () => {
   return (
     <>
       <div className="container">
-        <SearchbarComponent handleFormSubmit={handleFormSubmit} />
+        <SearchbarComponent
+          handleFormSubmit={handleFormSubmit}
+          pokemonsArr={pokemonDataArray}
+        />
         {isLoading ? (
           <div className="d-flex">
             <div className="loader my-auto mx-auto">

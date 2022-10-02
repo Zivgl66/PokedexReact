@@ -18,31 +18,41 @@ const PokemonCardPage = () => {
     axios
       .get(url)
       .then((res) => {
-        setPokemonDesc(
-          res.data.flavor_text_entries[1].flavor_text.replace("\f", "")
-        );
-        if (res.data.evolution_chain.url) {
-          axios
-            .get(res.data.evolution_chain.url)
-            .then((res) => {
-              const tmpArray = [];
-              //push 1st evolution name to the array
-              tmpArray.unshift(res.data.chain.species.name);
-              if (res.data.chain.evolves_to.length !== 0) {
-                //push 2nd evolution name to the array
-                tmpArray.push(res.data.chain.evolves_to[0].species.name);
-                if (res.data.chain.evolves_to[0].evolves_to[0]) {
-                  //push 3rd evolution name to the array
-                  tmpArray.push(
-                    res.data.chain.evolves_to[0].evolves_to[0].species.name
-                  );
+        if (res.data.flavor_text_entries.length > 1) {
+          setPokemonDesc(
+            res.data.flavor_text_entries[1].flavor_text.replace("\f", "")
+          );
+        } else {
+          setPokemonDesc(
+            res.data.flavor_text_entries[0].flavor_text.replace("\f", "")
+          );
+        }
+        if (res.data.evolution_chain) {
+          if (res.data.evolution_chain.url) {
+            axios
+              .get(res.data.evolution_chain.url)
+              .then((res) => {
+                const tmpArray = [];
+                //push 1st evolution name to the array
+                tmpArray.unshift(res.data.chain.species.name);
+                if (res.data.chain.evolves_to.length !== 0) {
+                  //push 2nd evolution name to the array
+                  tmpArray.push(res.data.chain.evolves_to[0].species.name);
+                  if (res.data.chain.evolves_to[0].evolves_to[0]) {
+                    //push 3rd evolution name to the array
+                    tmpArray.push(
+                      res.data.chain.evolves_to[0].evolves_to[0].species.name
+                    );
+                  }
                 }
-              }
-              getEvolutions(tmpArray);
-            })
-            .catch((error) =>
-              console.log("error from evolution chain req: ", error)
-            );
+                getEvolutions(tmpArray);
+              })
+              .catch((error) =>
+                console.log("error from evolution chain req: ", error)
+              );
+          }
+        } else {
+          setAllDone(true);
         }
       })
       .catch((error) => {

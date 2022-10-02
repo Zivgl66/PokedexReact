@@ -1,6 +1,7 @@
 import MiniCardComponent from "../miniCard/miniCard.component";
 import { Row, Col, Container } from "react-bootstrap";
 
+
 const TableComponent = (props) => {
   const divStyle = {
     backgroundColor: "white",
@@ -8,6 +9,7 @@ const TableComponent = (props) => {
     padding: "10px",
     marginTop: "10px",
   };
+
 
   return (
     <Container fluid style={divStyle}>
