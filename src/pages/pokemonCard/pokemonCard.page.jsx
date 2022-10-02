@@ -18,15 +18,10 @@ const PokemonCardPage = () => {
     axios
       .get(url)
       .then((res) => {
-        if (res.data.flavor_text_entries.length > 1) {
-          setPokemonDesc(
-            res.data.flavor_text_entries[1].flavor_text.replace("\f", "")
-          );
-        } else {
-          setPokemonDesc(
-            res.data.flavor_text_entries[0].flavor_text.replace("\f", "")
-          );
-        }
+        setPokemonDesc(
+          res.data.flavor_text_entries.find((o) => o.language.name === "en")
+            .flavor_text
+        );
         if (res.data.evolution_chain) {
           if (res.data.evolution_chain.url) {
             axios
