@@ -75,7 +75,7 @@ const PokemonCardPage = () => {
       setEvolutionsArrayData(tmpValue);
       setTimeout(() => {
         setAllDone(true);
-      }, 2000);
+      }, 1000);
     });
   };
 

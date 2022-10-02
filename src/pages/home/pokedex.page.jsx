@@ -82,12 +82,12 @@ const HomePage = () => {
             setPokemonArr2(slicedArr);
             setTimeout(() => {
               setIsLoading(false);
-            }, 2000);
+            }, 1000);
           } else {
             setPokemonArr2(array);
             setTimeout(() => {
               setIsLoading(false);
-            }, 1500);
+            }, 1000);
           }
         }
         //end loading screen

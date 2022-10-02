@@ -36,7 +36,6 @@ const NavbarComponent = () => {
           />
           <span style={divStyle}>pokedex</span>
         </NavLink>
-        <span>©Zivgl66</span>
       </div>
     </nav>
   );

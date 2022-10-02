@@ -13,7 +13,7 @@ const TableComponent = (props) => {
     <Container fluid style={divStyle}>
       <Row>
         {props.pokemonArr.map((pokemon, k) => (
-          <Col key={k} xs={12} md={6} lg={3}>
+          <Col key={k + pokemon} xs={12} md={6} lg={3}>
             <MiniCardComponent pokemon={pokemon} />
           </Col>
         ))}

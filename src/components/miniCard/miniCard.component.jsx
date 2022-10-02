@@ -25,13 +25,15 @@ const MiniCardComponent = (props) => {
         <a href="#" onClick={handleClick} className="card  mt-2">
           <div className="image-hover-zoom">
             <img
-              src={
-                checkImage(
-                  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
-                )
-                  ? imgSrc
-                  : noImg
-              }
+            //the function for checking each image, took alot of time from the rendering
+              // src={
+              //   checkImage(
+              //     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
+              //   )
+              //     ? imgSrc
+              //     : noImg
+              // }
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`}
               className="card__image"
               alt=""
             />

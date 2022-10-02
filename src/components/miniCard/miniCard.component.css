@@ -29,8 +29,10 @@ body {
 }
 
 .card__image {
+  position: relative;
   width: 100%;
   height: auto;
+  bottom: 10px;
   transition: transform 0.5s ease;
 }
 
@@ -44,7 +46,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
-  border-radius: calc(var(--curve) * 1px);
+  /* border-radius: calc(var(--curve) * 1px); */
   background-color: var(--surface-color);
   transform: translateY(100%);
   transition: 0.2s ease-in-out;
@@ -74,7 +76,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2em;
-  padding: 1em;
+  padding: 0.3em;
   border-radius: calc(var(--curve) * 1px) 0 0 0;
   background-color: var(--surface-color);
   transform: translateY(-100%);
@@ -110,7 +112,7 @@ body {
   --h: 1.2em;
   line-height: var(--h);
   font-size: 1.1em;
-  margin: 0 0 0.3em;
+  margin: 0 0 0;
   color: #0000;
   text-shadow: 0 calc(-1 * var(--_t, 0em)) #000,
     0 calc(var(--h) - var(--_t, 0em)) #164663;
