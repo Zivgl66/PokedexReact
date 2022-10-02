@@ -36,8 +36,36 @@ body {
   transition: transform 0.5s ease;
 }
 
-.card:hover .card__image {
-  transform: scale(1.2);
+@keyframes animation1 {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+.card:hover {
+  animation: animation1 2s ease 0s normal none;
+  opacity: 80%;
 }
 
 .card__overlay {
@@ -147,4 +175,3 @@ body {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-
