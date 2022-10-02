@@ -40,7 +40,11 @@ const SearchbarComponent = (props) => {
             value={searchInput}
             onChange={handleSearchChange}
           />
-          <button className="btn btn-outline-success mx-2" type="submit">
+          <button
+            className="btn mx-2"
+            style={{ backgroundColor: " #FF0000bf" }}
+            type="submit"
+          >
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </form>

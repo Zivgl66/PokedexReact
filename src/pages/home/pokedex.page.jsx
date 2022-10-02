@@ -149,7 +149,8 @@ const HomePage = () => {
               <TableComponent pokemonArr={pokemonArr2} />
               <div className="text-center">
                 <button
-                  className="btn m-3 btn-success"
+                  className="btn m-3"
+                  style={{ backgroundColor: "#FFDE00bf" }}
                   onClick={handleClickShowMore}
                 >
                   {showMore ? (

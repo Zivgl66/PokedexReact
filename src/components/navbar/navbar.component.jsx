@@ -19,7 +19,7 @@ const NavbarComponent = () => {
     if (location.pathname === "/") window.location.reload(false);
   };
   return (
-    <nav className="navbar  bg-primary bg-gradient ">
+    <nav className="navbar" style={{ backgroundColor: "#3B4CCA" }}>
       <div className="container-fluid">
         <NavLink
           className="navbar-brand p-1 text-white"
