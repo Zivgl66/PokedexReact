@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import "./about.component.css";
-const AboutComponent = () => {
+const AboutComponent = (props) => {
   const [showP, setShowP] = useState(true);
+
+  //check if clicked on the search button, if so, make the about disappear
+  useEffect(() => {
+    if (props.clickedSearch) setShowP(false);
+  }, [props.clickedSearch]);
+
   return (
     <>
       <div

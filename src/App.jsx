@@ -12,30 +12,35 @@ import PokemonCardPage from "./pages/pokemonCard/pokemonCard.page";
 
 function App() {
   const [openingAnimate, setOpeningAnimate] = useState(true);
-  const [displayOpening, setDisplayOpening] = useState(true);
   // make animation appear on the first load of the site
   useEffect(() => {
     if (window.sessionStorage.getItem("firstLoadDone") === null) {
-      window.sessionStorage.setItem("firstLoadDone", 1);
+      setTimeout(() => {
+        window.sessionStorage.setItem("firstLoadDone", 1);
+        setOpeningAnimate(false);
+      }, 3500);
+    } else {
+      console.log(window.sessionStorage.getItem("firstLoadDone"));
       setOpeningAnimate(false);
-      setDisplayOpening(false);
-    } else setOpeningAnimate(false);
-  }, [openingAnimate]);
+    }
+  }, [window.sessionStorage.getItem("firstLoadDone")]);
 
-  return openingAnimate ? (
-    <div className={displayOpening ? "d-block" : "d-none"}>
-      <OpeningAnimationComponent />
-    </div>
-  ) : (
+  return (
     <div className="container">
-      <ToastContainer />
-      <BrowserRouter>
-        <NavbarComponent />
-        <Routes>
-          <Route path={"/"} element={<HomePage />} />
-          <Route path={"/card/:id"} index element={<PokemonCardPage />} />
-        </Routes>
-      </BrowserRouter>
+      {openingAnimate ? (
+        <OpeningAnimationComponent />
+      ) : (
+        <>
+          <ToastContainer />
+          <BrowserRouter>
+            <NavbarComponent />
+            <Routes>
+              <Route path={"/"} element={<HomePage />} />
+              <Route path={"/card/:id"} index element={<PokemonCardPage />} />
+            </Routes>
+          </BrowserRouter>{" "}
+        </>
+      )}
     </div>
   );
 

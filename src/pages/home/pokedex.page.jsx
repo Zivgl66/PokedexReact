@@ -13,6 +13,7 @@ import "../loader.css";
 //functions
 import { onlyNumbers, ifInNumber } from "../../utils/functions";
 import AboutComponent from "../../components/about/about.component";
+import { click } from "@testing-library/user-event/dist/click";
 
 const HomePage = () => {
   //vars
@@ -25,6 +26,7 @@ const HomePage = () => {
   const [slicedArray, setSlicedArray] = useState([]);
   let [maxShow, setMaxShow] = useState();
   const [pokemonArr2, setPokemonArr2] = useState([]);
+  const [clickedSearch, setClickedSearch] = useState(false);
   // const [openingAnimate, setOpeningAnimate] = useState(true);
 
   let array = [];
@@ -52,6 +54,7 @@ const HomePage = () => {
   const handleFormSubmit = (input) => {
     //activate the loading screen
     setIsLoading(true);
+    setClickedSearch(true);
     // set the max showing items back to 12
     setMaxShow((maxShow = 12));
     // set the button to show more (instead of show less)
@@ -145,7 +148,7 @@ const HomePage = () => {
           handleFormSubmit={handleFormSubmit}
           pokemonsArr={pokemonDataArray}
         />
-        <AboutComponent />
+        <AboutComponent clickedSearch={clickedSearch} />
         {isLoading ? (
           <div className="d-flex">
             <div className="loader my-auto mx-auto">
