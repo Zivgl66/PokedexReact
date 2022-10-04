@@ -15,13 +15,13 @@ function App() {
   // make animation appear on the first load of the site
   useEffect(() => {
     if (window.sessionStorage.getItem("firstLoadDone") === null) {
-      setOpeningAnimate(true);
       window.sessionStorage.setItem("firstLoadDone", 1);
+      setOpeningAnimate(false);
     } else setOpeningAnimate(false);
   }, [openingAnimate]);
 
   return openingAnimate ? (
-    <div className="container">
+    <div className={openingAnimate ? "d-block" : "d-none"}>
       <OpeningAnimationComponent />
     </div>
   ) : (
