@@ -43,7 +43,7 @@ const CardComponent = ({
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const CardComponent = ({
               <a
                 onClick={handleClickNext}
                 className="btn text-white"
-                style={{ margin: "5px", padding: "5px 20px", outline: "solid" }}
+                style={{ margin: "5px", padding: "5px 26px", outline: "solid" }}
               >
                 next
               </a>

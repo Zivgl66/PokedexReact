@@ -130,3 +130,6 @@ mark {
   }
 }
 
+.animate__slideInLeft {
+  animation-duration: 2s;
+}
