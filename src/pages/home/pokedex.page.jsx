@@ -13,7 +13,6 @@ import "../loader.css";
 //functions
 import { onlyNumbers, ifInNumber } from "../../utils/functions";
 import AboutComponent from "../../components/about/about.component";
-import { click } from "@testing-library/user-event/dist/click";
 
 const HomePage = () => {
   //vars
@@ -121,7 +120,9 @@ const HomePage = () => {
           });
         }
         //end loading screen
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
       }
     }
   };

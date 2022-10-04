@@ -20,9 +20,9 @@ const NavbarComponent = () => {
   };
   return (
     <nav className="navbar" style={{ backgroundColor: "#3B4CCA" }}>
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-center">
         <NavLink
-          className="navbar-brand p-1 text-white"
+          className=" navbar-brand p-1 text-white"
           to="/"
           onClick={refreshPage}
         >
@@ -31,7 +31,7 @@ const NavbarComponent = () => {
             alt="pokeball logo"
             width="36"
             height="36"
-            className="d-inline-block mx-1"
+            className="d-inline-block mx-1 "
             style={{ verticalAlign: "sub", display: "inline-block" }}
           />
           <span style={divStyle}>pokedex</span>

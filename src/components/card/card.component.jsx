@@ -4,6 +4,7 @@ import { capitalize, getTypes } from "../../utils/functions";
 import TypeBtnsComponent from "../typeBtns/typeBtns.component";
 import EvoMiniCardComponent from "../evoMiniCard/evoMiniCard.component";
 import { Row, Col, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const CardComponent = ({
   name,
@@ -19,6 +20,10 @@ const CardComponent = ({
   // declaring the types array , evolutions array
   const [typesArray, setTypesArray] = useState([]);
   const [evosArray, setEvosArray] = useState([]);
+  const navigate = useNavigate();
+  const [next, setNext] = useState(index + 1);
+  const [prev, setPrev] = useState(index - 1);
+  const [isLoading, setIsLoading] = useState(true);
 
   const divStyle = {
     backgroundColor: "#e0dada30",
@@ -30,13 +35,86 @@ const CardComponent = ({
 
   useEffect(() => {
     setTypesArray(getTypes(type));
+    // evolutions.sort((a, b) => a.id - b.id);
+    console.log(evolutions);
     setEvosArray(evolutions);
-  }, [type]);
+  }, [type, evolutions]);
 
-  return (
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
+  useEffect(() => {
+    if (index === 1) setPrev(905);
+    if (index === 905) setNext(1);
+  }, [index]);
+
+  const handleClickNext = () => {
+    navigate(`/card/${next}`);
+  };
+  const handleClickPrev = () => {
+    navigate(`/card/${prev}`);
+  };
+  const handleClickSearch = () => {
+    navigate(`/`);
+  };
+  return isLoading ? (
+    <div className="d-flex">
+      <div className="loader my-auto mx-auto">
+        <div className="ring "></div>
+      </div>
+    </div>
+  ) : (
     <>
-      <section className="section about-section gray-bg" id="about">
+      <section
+        className="section about-section gray-bg animate__animated animate__slideInLeft"
+        id="about"
+      >
         <div className="container">
+          <div className="row row-cols-3 d-flex mb-3">
+            <div
+              className=" col-lg-4 col-md-4 col-sm-4 col-xs-1"
+              style={{ backgroundColor: " #FF0000" }}
+            >
+              <a
+                onClick={handleClickPrev}
+                className="btn text-white"
+                style={{
+                  margin: "5px",
+                  padding: "5px 10px",
+                  outline: "solid",
+                }}
+              >
+                previous
+              </a>
+            </div>
+            <div
+              className=" col-lg-4 col-md-4 col-sm-4 col-xs-1 d-flex justify-content-center"
+              style={{ backgroundColor: " #FF0000" }}
+            >
+              <a
+                onClick={handleClickSearch}
+                className="btn text-white"
+                style={{ margin: "5px", padding: "5px 15px", outline: "solid" }}
+              >
+                search
+              </a>
+            </div>
+            <div
+              className=" col-lg-4 col-md-4 col-sm-4 col-xs-1 d-flex justify-content-end"
+              style={{ backgroundColor: " #FF0000" }}
+            >
+              <a
+                onClick={handleClickNext}
+                className="btn text-white"
+                style={{ margin: "5px", padding: "5px 20px", outline: "solid" }}
+              >
+                next
+              </a>
+            </div>
+          </div>
           <div className="row align-items-center flex-row-reverse">
             <div className="col-lg-6 col-md-10 col-sm-12">
               <div className="about-text">

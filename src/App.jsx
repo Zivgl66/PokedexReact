@@ -20,7 +20,6 @@ function App() {
         setOpeningAnimate(false);
       }, 3500);
     } else {
-      console.log(window.sessionStorage.getItem("firstLoadDone"));
       setOpeningAnimate(false);
     }
   }, [window.sessionStorage.getItem("firstLoadDone")]);

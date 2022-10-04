@@ -49,6 +49,7 @@ const PokemonCardPage = () => {
               );
           }
         } else {
+          setEvolutionsArrayData([]);
           setAllDone(true);
         }
       })
@@ -82,12 +83,13 @@ const PokemonCardPage = () => {
       setEvolutionsArrayData(tmpValue);
       setTimeout(() => {
         setAllDone(true);
-      }, 1000);
+      }, 3000);
     });
   };
 
   //useeffect to get the pokemon's data
   useEffect(() => {
+    setAllDone(false);
     const getData = async () => {
       try {
         const { data } = await axios.get(
