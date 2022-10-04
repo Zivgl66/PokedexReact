@@ -177,5 +177,5 @@ body {
 }
 
 .animate__jackInTheBox {
-  --animate-duration: 3s;
+  animation-duration: 1.5s;
 }

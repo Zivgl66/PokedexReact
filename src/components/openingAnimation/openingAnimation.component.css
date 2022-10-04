@@ -1,0 +1,15 @@
+
+@keyframes scaleAnimate {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+.pokeball {
+  animation: scaleAnimate 5s ease-in-out;
+}

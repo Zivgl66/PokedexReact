@@ -10,8 +10,8 @@ const MiniCardComponent = (props) => {
   let imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`;
 
   //if no image for the pokemon, use this one
-  let noImg =
-    "https://irisvision.com/wp-content/uploads/2019/01/no-profile-1.png";
+  // let noImg =
+  //   "https://irisvision.com/wp-content/uploads/2019/01/no-profile-1.png";
 
   //handle the click and redirect to a card with the id of the pokemon
   const handleClick = () => {
@@ -24,14 +24,6 @@ const MiniCardComponent = (props) => {
         <a href="#" onClick={handleClick} className="card mt-2 ">
           <div className="image-hover-zoom">
             <img
-              //the function for checking each image, took alot of time from the rendering
-              // src={
-              //   checkImage(
-              //     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
-              //   )
-              //     ? imgSrc
-              //     : noImg
-              // }
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`}
               className="card__image"
               alt="pokemon image"

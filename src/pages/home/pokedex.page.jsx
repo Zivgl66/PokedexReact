@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import "../loader.css";
 //functions
 import { onlyNumbers, ifInNumber } from "../../utils/functions";
+import AboutComponent from "../../components/about/about.component";
 
 const HomePage = () => {
   //vars
@@ -24,12 +25,22 @@ const HomePage = () => {
   const [slicedArray, setSlicedArray] = useState([]);
   let [maxShow, setMaxShow] = useState();
   const [pokemonArr2, setPokemonArr2] = useState([]);
+  // const [openingAnimate, setOpeningAnimate] = useState(true);
 
   let array = [];
   let obj = {};
   let slicedArr = [];
   let pokeAPIURL = "https://pokeapi.co/api/v2/pokemon/";
 
+  // make animation appear on the first load of the site
+  // useEffect(() => {
+  //   if (window.sessionStorage.getItem("firstLoadDone") === null) {
+  //     setOpeningAnimate(true);
+  //     window.sessionStorage.setItem("firstLoadDone", 1);
+  //   } else setOpeningAnimate(false);
+  // }, []);
+
+  // make the axios request on load of the homepage
   useEffect(() => {
     setPokemonDataArray([]);
     axios
@@ -134,6 +145,7 @@ const HomePage = () => {
           handleFormSubmit={handleFormSubmit}
           pokemonsArr={pokemonDataArray}
         />
+        <AboutComponent />
         {isLoading ? (
           <div className="d-flex">
             <div className="loader my-auto mx-auto">
