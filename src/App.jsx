@@ -12,16 +12,18 @@ import PokemonCardPage from "./pages/pokemonCard/pokemonCard.page";
 
 function App() {
   const [openingAnimate, setOpeningAnimate] = useState(true);
+  const [displayOpening, setDisplayOpening] = useState(true);
   // make animation appear on the first load of the site
   useEffect(() => {
     if (window.sessionStorage.getItem("firstLoadDone") === null) {
       window.sessionStorage.setItem("firstLoadDone", 1);
       setOpeningAnimate(false);
+      setDisplayOpening(false);
     } else setOpeningAnimate(false);
   }, [openingAnimate]);
 
   return openingAnimate ? (
-    <div className={openingAnimate ? "d-block" : "d-none"}>
+    <div className={displayOpening ? "d-block" : "d-none"}>
       <OpeningAnimationComponent />
     </div>
   ) : (
