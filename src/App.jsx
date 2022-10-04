@@ -15,9 +15,9 @@ function App() {
   // make animation appear on the first load of the site
   useEffect(() => {
     if (window.sessionStorage.getItem("firstLoadDone") === null) {
-      setOpeningAnimate(true);
       window.sessionStorage.setItem("firstLoadDone", 1);
-    } else setOpeningAnimate(false);
+      setOpeningAnimate(false);
+    }
   }, []);
 
   return openingAnimate ? (
