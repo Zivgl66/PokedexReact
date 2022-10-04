@@ -17,7 +17,7 @@ function App() {
     if (window.sessionStorage.getItem("firstLoadDone") === null) {
       window.sessionStorage.setItem("firstLoadDone", 1);
       setOpeningAnimate(false);
-    }
+    } else setOpeningAnimate(false);
   }, [openingAnimate]);
 
   return openingAnimate ? (
