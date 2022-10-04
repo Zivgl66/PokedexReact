@@ -106,6 +106,27 @@ mark {
   color: #20247b;
 }
 
-.fatherDiv .childDiv:not(:last-child)::after {
+/* .fatherDiv .childDiv:not(:last-child)::after {
   content: url("../../assets/arrowRight2.png");
+} */
+
+@media (min-width: 320px), (min-width: 480px) {
+  .childDiv {
+    flex-direction: column;
+  }
+  .fatherDiv .childDiv:not(:last-child)::after {
+    content: url("../../assets/arrowDown.png");
+    margin-top: 5px;
+  }
 }
+
+@media (min-width: 576px) {
+  .childDiv {
+    flex-direction: row;
+  }
+  .fatherDiv .childDiv:not(:last-child)::after {
+    content: url("../../assets/arrowRight2.png");
+    margin-right: 5px;
+  }
+}
+

@@ -18,9 +18,11 @@ const PokemonCardPage = () => {
     axios
       .get(url)
       .then((res) => {
+        //getting the description of the pokemon in english and removing unnecessary parts of it
         setPokemonDesc(
-          res.data.flavor_text_entries.find((o) => o.language.name === "en")
-            .flavor_text
+          res.data.flavor_text_entries
+            .find((o) => o.language.name === "en")
+            .flavor_text.replace("\f", " ")
         );
         if (res.data.evolution_chain) {
           if (res.data.evolution_chain.url) {

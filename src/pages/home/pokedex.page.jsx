@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import SearchbarComponent from "../../components/searchBar/searchBar.component";
 import TableComponent from "../../components/table/table.component";
 // axios
@@ -149,7 +149,7 @@ const HomePage = () => {
               <TableComponent pokemonArr={pokemonArr2} />
               <div className="text-center">
                 <button
-                  className="btn m-3"
+                  className="btn showBtn m-3"
                   style={{ backgroundColor: "#FFDE00bf" }}
                   onClick={handleClickShowMore}
                 >

@@ -10,7 +10,7 @@ const EvoMiniCardComponent = (props) => {
   return (
     <>
       <div className="evolutionCard">
-        <a href="#" onClick={handleClick} className="card2 mx-2">
+        <a href="#" onClick={handleClick} className="card2 mx-2 my-1">
           <div className="image-hover-zoom">
             <img src={props.evo.image} className="card2__image" alt="" />
           </div>

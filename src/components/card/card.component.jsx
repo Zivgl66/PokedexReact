@@ -100,29 +100,33 @@ const CardComponent = ({
               </div>
             </div>
           </div>
-          <div className="d-flex">
-            <Container fluid className="mx-auto" style={divStyle}>
-              <Row className="d-flex fatherDiv justify-content-center">
-                {evosArray.map((obj, idx) => {
-                  if (evosArray.length !== 1)
-                    return (
-                      <>
-                        <Col
-                          key={idx}
-                          xs={6}
-                          sm={5}
-                          md={4}
-                          lg={3}
-                          className="text-center childDiv d-flex align-items-center"
-                        >
-                          <EvoMiniCardComponent evo={obj} key={idx} />
-                        </Col>
-                      </>
-                    );
-                })}
-              </Row>
-            </Container>
-          </div>
+          {evosArray.length > 1 ? (
+            <div className="d-flex evoCard">
+              <Container fluid className="mx-auto" style={divStyle}>
+                <Row className="d-flex fatherDiv justify-content-center">
+                  {evosArray.map((obj, idx) => {
+                    if (evosArray.length !== 1)
+                      return (
+                        <>
+                          <Col
+                            key={idx}
+                            xs={8}
+                            sm={5}
+                            md={4}
+                            lg={3}
+                            className="text-center childDiv d-flex align-items-center"
+                          >
+                            <EvoMiniCardComponent evo={obj} key={idx} />
+                          </Col>
+                        </>
+                      );
+                  })}
+                </Row>
+              </Container>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </section>
     </>

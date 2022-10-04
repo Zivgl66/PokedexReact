@@ -175,3 +175,7 @@ body {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+.animate__jackInTheBox {
+  --animate-duration: 3s;
+}

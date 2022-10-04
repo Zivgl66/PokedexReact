@@ -20,8 +20,8 @@ const MiniCardComponent = (props) => {
 
   return (
     <>
-      <div>
-        <a href="#" onClick={handleClick} className="card  mt-2">
+      <div className="animate__animated animate__jackInTheBox">
+        <a href="#" onClick={handleClick} className="card mt-2 ">
           <div className="image-hover-zoom">
             <img
               //the function for checking each image, took alot of time from the rendering

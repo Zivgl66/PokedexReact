@@ -3,6 +3,7 @@ import { useState } from "react";
 // fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 const SearchbarComponent = (props) => {
   const [searchInput, setSearchInput] = useState("");
@@ -41,8 +42,8 @@ const SearchbarComponent = (props) => {
             onChange={handleSearchChange}
           />
           <button
-            className="btn mx-2"
-            style={{ backgroundColor: " #FF0000bf" }}
+            className="btn searchBtn mx-2"
+            style={{ backgroundColor: " #ff0000bb" }}
             type="submit"
           >
             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -59,7 +60,7 @@ const SearchbarComponent = (props) => {
                 pokemonName !== searchTerm
               );
             })
-            .slice(0, 10)
+            .slice(0, 5)
             .map((item) => (
               <div
                 onClick={() => handleSearch(item.name)}
