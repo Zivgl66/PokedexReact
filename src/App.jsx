@@ -18,7 +18,7 @@ function App() {
       window.sessionStorage.setItem("firstLoadDone", 1);
       setOpeningAnimate(false);
     }
-  }, []);
+  }, [openingAnimate]);
 
   return openingAnimate ? (
     <div className="container">
