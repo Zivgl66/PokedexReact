@@ -1,0 +1,53 @@
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.card2 {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+  background-color: #fff;
+}
+.img-hover-zoom {
+  height: 300px;
+}
+
+.card2__image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.card2:hover .card2__image {
+  transform: scale(1.2);
+}
+
+.card2__title {
+  --h: 1.2em;
+  line-height: var(--h);
+  font-size: 1.1em;
+  margin: 0 0 0.3em;
+  color: #0000;
+  text-shadow: 0 calc(-1 * var(--_t, 0em)) #000,
+    0 calc(var(--h) - var(--_t, 0em)) #164663;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.card2:hover .card2__title {
+  --_t: var(--h);
+  transform: scale(1.1);
+}
+
+.card2__status {
+  font-size: 0.9em;
+  color: #d7bdca;
+}
+
