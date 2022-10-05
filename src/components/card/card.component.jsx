@@ -37,8 +37,6 @@ const CardComponent = ({
 
   useEffect(() => {
     setTypesArray(getTypes(type));
-    // evolutions.sort((a, b) => a.id - b.id);
-    console.log(stats);
     setEvosArray(evolutions);
   }, [type, evolutions]);
 
@@ -75,7 +73,7 @@ const CardComponent = ({
         id="about"
       >
         <div className="container">
-          <div className="row row-cols-3 d-flex mb-3">
+          <div className="row row-cols-3 d-flex mb-3 buttons">
             <div
               className=" col-lg-4 col-md-4 col-sm-4 col-xs-1"
               style={{ backgroundColor: " #FF0000" }}
@@ -158,7 +156,7 @@ const CardComponent = ({
                 </div>
                 <div className="row about-list">
                   <div className="col-md">
-                    <div className="media mt-1">
+                    <div className="media mt-1 typeBtns">
                       <label>Type:</label>
                       {typesArray.map((item, idx) => {
                         return (
@@ -194,7 +192,7 @@ const CardComponent = ({
                           <Col
                             key={idx}
                             xs={8}
-                            sm={5}
+                            sm={7}
                             md={4}
                             lg={3}
                             className="text-center childDiv d-flex align-items-center"

@@ -62,11 +62,11 @@ img {
   font-size: 15px;
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .about-avatar {
     margin-top: 30px;
   }
-}
+} */
 
 .about-section .counter {
   padding: 22px 20px;
@@ -106,10 +106,6 @@ mark {
   color: #20247b;
 }
 
-/* .fatherDiv .childDiv:not(:last-child)::after {
-  content: url("../../assets/arrowRight2.png");
-} */
-
 @media (min-width: 320px), (min-width: 480px) {
   .childDiv {
     flex-direction: column;
@@ -120,7 +116,7 @@ mark {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .childDiv {
     flex-direction: row;
   }
@@ -132,4 +128,25 @@ mark {
 
 .animate__slideInLeft {
   animation-duration: 2s;
+}
+
+@media (max-width: 347px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+@media (max-width: 991px), (min-width: 767px) {
+  .typeBtns {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+}
+
+@media (max-width: 767px) {
+  .typeBtns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
