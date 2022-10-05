@@ -1,15 +1,10 @@
 import "./footer.component.css";
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBIcon,
-  MDBBtn,
-} from "mdb-react-ui-kit";
+import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from "mdb-react-ui-kit";
 
 const FooterComponent = () => {
   return (
     <MDBFooter
-      className="bg-white text-center text-white footer container-fluid"
+      className=" text-center text-white footer container-fluid"
       style={{ borderRadius: "25px" }}
     >
       <MDBContainer className="p-1 pb-0">

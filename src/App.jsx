@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-// import logo from "./logo.svg";
 import "./App.css";
 import NavbarComponent from "./components/navbar/navbar.component";
 import OpeningAnimationComponent from "./components/openingAnimation/openingAnimation.component";

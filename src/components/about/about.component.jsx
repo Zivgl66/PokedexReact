@@ -22,7 +22,7 @@ const AboutComponent = (props) => {
       >
         <div
           className=" container-fluid justify-content-center "
-          style={{ backgroundColor: "#e6d77b21" }}
+          // style={{ backgroundColor: "#e6d77b21", borderRadius: "150px" }}
         >
           <p>
             <span className="fs-3 fw-bold text-decoration-underline">
