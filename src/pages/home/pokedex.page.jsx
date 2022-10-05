@@ -163,7 +163,7 @@ const HomePage = () => {
           (pokemonArr2.length > 11 && (
             <>
               <TableComponent pokemonArr={pokemonArr2} />
-              <div className="text-center">
+              <div className="text-center mt-2">
                 <button
                   className="btn showBtn m-3"
                   style={{ backgroundColor: "#FFDE00bf" }}

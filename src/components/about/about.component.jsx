@@ -31,7 +31,9 @@ const AboutComponent = (props) => {
             <span className="about_p fs-4">
               Here you can find information about Pokemon from each generation,
               <br />
-              just search by name of pokemon or id number. Enjoy!
+              just search by name of pokemon or id number.
+              <br />
+              my information is listed below, enjoy!
               <br />
               <span className="fst-italic lh-lg">
                 <mark>Stack: React, REST API, JS</mark> <br />

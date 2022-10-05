@@ -1,3 +1,4 @@
+import "./navbar.component.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useLocation } from "react-router-dom";
@@ -22,7 +23,7 @@ const NavbarComponent = () => {
     <nav className="navbar" style={{ backgroundColor: "#3B4CCA" }}>
       <div className="container-fluid d-flex justify-content-center">
         <NavLink
-          className=" navbar-brand p-1 text-white"
+          className="navbar-brand p-1 text-white"
           to="/"
           onClick={refreshPage}
         >
