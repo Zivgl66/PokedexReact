@@ -138,6 +138,7 @@ const PokemonCardPage = () => {
         weight={pokeData.weight / 10}
         description={pokemonDesc}
         evolutions={evolutionsArrayData.sort((a, b) => a.id - b.id)}
+        stats={pokeData.stats}
       />
     </>
   );

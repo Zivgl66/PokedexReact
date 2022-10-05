@@ -5,6 +5,7 @@ import TypeBtnsComponent from "../typeBtns/typeBtns.component";
 import EvoMiniCardComponent from "../evoMiniCard/evoMiniCard.component";
 import { Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import BarChartComponent from "../barChart/barChart.component";
 
 const CardComponent = ({
   name,
@@ -16,6 +17,7 @@ const CardComponent = ({
   type,
   evolutions,
   description,
+  stats,
 }) => {
   // declaring the types array , evolutions array
   const [typesArray, setTypesArray] = useState([]);
@@ -36,7 +38,7 @@ const CardComponent = ({
   useEffect(() => {
     setTypesArray(getTypes(type));
     // evolutions.sort((a, b) => a.id - b.id);
-    console.log(evolutions);
+    console.log(stats);
     setEvosArray(evolutions);
   }, [type, evolutions]);
 
@@ -177,6 +179,9 @@ const CardComponent = ({
                 />
               </div>
             </div>
+          </div>
+          <div className="row">
+            <BarChartComponent stats={stats} />
           </div>
           {evosArray.length > 1 ? (
             <div className="d-flex evoCard">

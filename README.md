@@ -1,3 +1,12 @@
+# POKEDEX PROJECT
+
+### Welcome to my pokedex project!
+feel free to browse around and check my code.
+Iv'e been using the PokeApi - https://pokeapi.co/
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
