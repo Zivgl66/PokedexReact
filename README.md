@@ -1,8 +1,9 @@
 # POKEDEX PROJECT
+## A pokedex app where you can get inormation on any pokemon there is!
+### check the link - https://pokedex-zivgl66.vercel.app/
 
-### Welcome to my pokedex project!
-feel free to browse around and check my code.
-Iv'e been using the PokeApi - https://pokeapi.co/
+### feel free to browse around and check my code.
+### Iv'e been using the PokeApi - https://pokeapi.co/
 
 
 
