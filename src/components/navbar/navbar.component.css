@@ -1,3 +1,9 @@
 .navbar-brand {
   display: block !important;
 }
+
+@media (min-width: 320px), (min-width: 480px) {
+  .navbar {
+    margin-bottom: 0 !important;
+  }
+}

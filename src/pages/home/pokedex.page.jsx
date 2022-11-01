@@ -1,3 +1,4 @@
+import "./pokedex.page.css";
 import { useState, useEffect } from "react";
 import SearchbarComponent from "../../components/searchBar/searchBar.component";
 import TableComponent from "../../components/table/table.component";

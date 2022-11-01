@@ -22,7 +22,7 @@ const FooterComponent = () => {
 
           <MDBBtn
             floating
-            className="mx-1"
+            className="mx-1 floatContact"
             style={{ backgroundColor: "#dd4b39", borderRadius: "25px" }}
             href="https://mail.google.com/mail/u/?authuser=zivgl66@gmail.com"
             role="button"

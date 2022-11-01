@@ -12,16 +12,16 @@ import FooterComponent from "./components/footer/footer.component";
 function App() {
   const [openingAnimate, setOpeningAnimate] = useState(true);
   // make animation appear on the first load of the site
-  useEffect(() => {
-    if (window.sessionStorage.getItem("firstLoadDone") === null) {
-      setTimeout(() => {
-        window.sessionStorage.setItem("firstLoadDone", 1);
-        setOpeningAnimate(false);
-      }, 3000);
-    } else {
-      setOpeningAnimate(false);
-    }
-  }, [window.sessionStorage.getItem("firstLoadDone")]);
+  // useEffect(() => {
+  //   if (window.sessionStorage.getItem("firstLoadDone") === null) {
+  //     setTimeout(() => {
+  //       window.sessionStorage.setItem("firstLoadDone", 1);
+  //       setOpeningAnimate(false);
+  //     }, 3000);
+  //   } else {
+  //     setOpeningAnimate(false);
+  //   }
+  // }, [window.sessionStorage.getItem("firstLoadDone")]);
 
   return (
     <div
@@ -32,31 +32,31 @@ function App() {
         height: "100vh",
       }}
     >
-      {openingAnimate ? (
+      {/* {openingAnimate ? (
         <OpeningAnimationComponent />
-      ) : (
-        <>
-          <ToastContainer />
-          <BrowserRouter>
-            <NavbarComponent />
-            <div
-              className="main"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100vh",
-              }}
-            >
-              <Routes>
-                <Route path={"/"} element={<HomePage />} />
-                <Route path={"/card/:id"} index element={<PokemonCardPage />} />
-              </Routes>
-              <FooterComponent />
-            </div>
-          </BrowserRouter>
-        </>
-      )}
+      ) : ( */}
+      <>
+        <ToastContainer />
+        <BrowserRouter>
+          <NavbarComponent />
+          <div
+            className="main"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100vh",
+            }}
+          >
+            <Routes>
+              <Route path={"/"} element={<HomePage />} />
+              <Route path={"/card/:id"} index element={<PokemonCardPage />} />
+            </Routes>
+            <FooterComponent />
+          </div>
+        </BrowserRouter>
+      </>
+      {/* )} */}
     </div>
   );
 }

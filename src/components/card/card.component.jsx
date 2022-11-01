@@ -72,7 +72,7 @@ const CardComponent = ({
         className="section about-section gray-bg animate__animated animate__slideInLeft"
         id="about"
       >
-        <div className="container">
+        <div className="container container_card">
           <div className="row row-cols-3 d-flex mb-3 buttons">
             <div
               className=" col-lg-4 col-md-4 col-sm-4 col-xs-1"

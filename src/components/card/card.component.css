@@ -150,3 +150,12 @@ mark {
     width: 100%;
   }
 }
+
+@media (min-width: 320px), (min-width: 480px) {
+  .container_card {
+    padding: 0 10px !important;
+  }
+  .section {
+    padding: 0 0;
+  }
+}

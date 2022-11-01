@@ -3,7 +3,6 @@ import { useState } from "react";
 // fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 const SearchbarComponent = (props) => {
   const [searchInput, setSearchInput] = useState("");
