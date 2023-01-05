@@ -14,28 +14,23 @@
   background: #fff;
   transition: all 0.5s;
 }
-.loader .ring {
+.loader .ring img {
+  position: absolute;
   height: 45px;
   width: 45px;
-  border: 5px solid #ddd;
-  border-radius: 50%;
+  /* border: 5px solid #ddd;
+  border-radius: 50%; */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.loader .ring:after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  border: 5px solid #ff3d00;
-  border-top-color: transparent;
   animation: rotate 1.5s linear infinite;
 }
 @keyframes rotate {
-  100% {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
     transform: rotate(360deg);
   }
 }

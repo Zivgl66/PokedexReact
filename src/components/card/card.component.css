@@ -15,7 +15,7 @@ img {
   vertical-align: middle;
   border-style: none;
 }
-/* About Me 
+/* card
 ---------------------*/
 
 .about-text h3 {
@@ -127,7 +127,10 @@ mark {
 }
 
 .animate__slideInLeft {
-  animation-duration: 2s;
+  animation-duration: 1s;
+}
+.animate__slideInRight {
+  animation-duration: 1s;
 }
 
 @media (max-width: 347px) {

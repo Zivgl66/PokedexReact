@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import "./about.component.css";
+
 const AboutComponent = (props) => {
   const [showP, setShowP] = useState(true);
 
@@ -38,6 +39,7 @@ const AboutComponent = (props) => {
               <span className="fst-italic lh-lg">
                 <mark>Stack: React, REST API, JS</mark> <br />
               </span>
+              
             </span>
           </p>
           <div className="fs-6 animate__animated animate__headShake ">

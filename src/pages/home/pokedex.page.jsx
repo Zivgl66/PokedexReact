@@ -11,6 +11,7 @@ import searchSchema from "../../validation/search.validation";
 import { toast } from "react-toastify";
 //loader for page
 import "../loader.css";
+import pofilePokeball from "../../assets/profilePokeball.png";
 //functions
 import { onlyNumbers, ifInNumber } from "../../utils/functions";
 import AboutComponent from "../../components/about/about.component";
@@ -154,7 +155,9 @@ const HomePage = () => {
         {isLoading ? (
           <div className="d-flex">
             <div className="loader my-auto mx-auto">
-              <div className="ring "></div>
+              <div className="ring ">
+                <img src={pofilePokeball} alt="" />
+              </div>
             </div>
           </div>
         ) : (

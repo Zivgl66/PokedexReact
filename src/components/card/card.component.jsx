@@ -4,8 +4,9 @@ import { capitalize, getTypes } from "../../utils/functions";
 import TypeBtnsComponent from "../typeBtns/typeBtns.component";
 import EvoMiniCardComponent from "../evoMiniCard/evoMiniCard.component";
 import { Row, Col, Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BarChartComponent from "../barChart/barChart.component";
+import pofilePokeball from "../../assets/profilePokeball.png";
 
 const CardComponent = ({
   name,
@@ -63,7 +64,9 @@ const CardComponent = ({
   return isLoading ? (
     <div className="d-flex">
       <div className="loader my-auto mx-auto">
-        <div className="ring "></div>
+        <div className="ring ">
+          <img src={pofilePokeball} alt="" />
+        </div>
       </div>
     </div>
   ) : (

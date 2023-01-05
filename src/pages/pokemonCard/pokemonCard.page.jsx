@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CardComponent from "../../components/card/card.component";
 import "../loader.css";
+import pofilePokeball from "../../assets/profilePokeball.png";
 
 const PokemonCardPage = () => {
   //getting the id of the pokemon from the url
@@ -90,6 +91,7 @@ const PokemonCardPage = () => {
   //useeffect to get the pokemon's data
   useEffect(() => {
     setAllDone(false);
+    setIsLoading(true);
     const getData = async () => {
       try {
         const { data } = await axios.get(
@@ -122,7 +124,9 @@ const PokemonCardPage = () => {
   return isLoading ? (
     <div className="d-flex">
       <div className="loader my-auto mx-auto">
-        <div className="ring "></div>
+        <div className="ring ">
+          <img src={pofilePokeball} alt="" />
+        </div>
       </div>
     </div>
   ) : (
